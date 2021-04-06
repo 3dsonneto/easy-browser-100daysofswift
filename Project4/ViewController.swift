@@ -9,7 +9,13 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController {
+    var webView: WKWebView!
     
+    override func loadView() {
+        webView = WKWebView() //
+        webView.navigationDelegate = self //Delegate é uma coisa agindo no lugar de outra, respondendo perguntas e respondendo a eventos
+        view = webView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
